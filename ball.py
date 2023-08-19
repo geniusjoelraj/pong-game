@@ -11,14 +11,12 @@ class Ball(Turtle):
         self.goto(position)
         self.xmove = 10
         self.ymove = 10
-        self.var = 0.05
 
     def move(self):
         newx = self.xcor() + self.xmove
         newy = self.ycor() + self.ymove
         self.goto(newx, newy)
-        speed = self.var
-        time.sleep(speed)
+        time.sleep(0.05)
         
 
     def bounce(self):
@@ -26,9 +24,7 @@ class Ball(Turtle):
 
     def deflect(self):
         self.xmove *= -1
-        self.ymove *= -1
 
     def respawn(self):
         self.goto(0, random.randint(-300, 300))
         self.xmove *= -1
-        self.var = self.var/ 1000
